@@ -1,74 +1,92 @@
-# React + TypeScript + Vite
+# Modern Kanban Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, React 19 ve TypeScript kullanılarak geliştirilmiş, yüksek performanslı, erişilebilir ve modern bir Kanban yönetim uygulamasıdır. Supabase altyapısı ile gerçek zamanlı veri senkronizasyonu sağlar.
 
-Currently, two official plugins are available:
+## 🚀 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Temel Fonksiyonlar
+*   **Board Yönetimi:** Sınırsız sayıda Kanban tahtası oluşturma, düzenleme ve silme.
+*   **Gelişmiş Sürükle & Bırak:** Board içindeki kartları ve sütunları sürükleyip bırakarak organize etme (@dnd-kit).
+*   **Gerçek Zamanlı Senkronizasyon:** Yapılan tüm değişiklikler Supabase sayesinde anında veritabanına kaydedilir.
+*   **Kişiselleştirme:** Board başlıklarını ve içeriklerini kolayca düzenleyebilme.
 
-## React Compiler
+### Kullanıcı Deneyimi (UX)
+*   **Karanlık/Aydınlık Mod:** Sistem tercihinize duyarlı veya manuel olarak değiştirilebilen tema desteği.
+*   **Klavye Kısayolları:** Klavye ile hızlı gezinme ve işlem yapabilme (Kısayollar menüsü için `?` tuşuna basın).
+*   **Erişilebilirlik (A11y):** Ekran okuyucularla tam uyumlu, klavye dostu arayüz ve ARIA standartlarına uygun yapı.
+*   **Toast Bildirimleri:** İşlem sonuçları hakkında kullanıcıya anlık geri bildirimler (Başarılı, Hata vb.).
+*   **Yükleme Durumları:** Veri yüklenirken gösterilen Skeleton ekranlar ile akıcı bir deneyim.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Teknik Özellikler
+*   **Type Safety:** Baştan sona TypeScript kullanımı ile tip güvenliği.
+*   **Performans:** Vite ile optimize edilmiş build süreci ve React 19'un yeni özellikleri.
+*   **Modüler Mimari:** Bakımı kolay, genişletilebilir bileşen ve klasör yapısı.
 
-## Expanding the ESLint configuration
+## 🛠 Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Bu proje güncel web teknolojileri kullanılarak inşa edilmiştir:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Core:** [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+*   **Build Tool:** [Vite 7](https://vitejs.dev/)
+*   **Routing:** [React Router v7](https://reactrouter.com/)
+*   **Veritabanı & Backend:** [Supabase](https://supabase.com/)
+*   **Drag & Drop:** [@dnd-kit](https://dndkit.com/) (Core, Sortable, Utilities)
+*   **UI & Animasyon:** 
+    *   [Framer Motion](https://www.framer.com/motion/) (Animasyonlar)
+    *   [Three.js](https://threejs.org/) & [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) (3D Efektler)
+*   **CSS:** Modern CSS Variables, CSS Modules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Kurulum
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyin:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Repoyu Klonlayın:**
+    ```bash
+    git clone https://github.com/kullaniciadi/kanban-app.git
+    cd kanban-app
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2.  **Bağımlılıkları Yükleyin:**
+    ```bash
+    # pnpm kullanıyorsanız (önerilen)
+    pnpm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-"# kanban-app" 
+    # veya npm
+    npm install
+    ```
+
+3.  **Çevresel Değişkenleri Ayarlayın:**
+    Kök dizinde `.env.local` dosyası oluşturun ve Supabase bilgilerinizi ekleyin:
+    ```env
+    VITE_SUPABASE_URL=your_supabase_project_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
+
+4.  **Uygulamayı Başlatın:**
+    ```bash
+    pnpm run dev
+    ```
+    Uygulama `http://localhost:5173` adresinde çalışacaktır.
+
+## ⌨️ Klavye Kısayolları
+
+Uygulama içinde kullanabileceğiniz bazı temel kısayollar:
+
+| Tuş | İşlem |
+|-----|-------|
+| `?` | Kısayol menüsünü aç/kapat |
+| `N` | Yeni Board oluştur |
+| `T` | Temayı değiştir (Koyu/Açık) |
+| `Esc` | Modalları veya pencereleri kapat |
+
+## 🤝 Katkıda Bulunma
+
+1.  Bu repoyu fork'layın.
+2.  Yeni bir feature branch oluşturun (`git checkout -b feature/AmazingFeature`).
+3.  Değişikliklerinizi commit'leyin (`git commit -m 'Add some AmazingFeature'`).
+4.  Branch'inizi push'layın (`git push origin feature/AmazingFeature`).
+5.  Bir Pull Request oluşturun.
+
+## 📄 Lisans
+
+Bu proje [MIT](LICENSE) lisansı ile lisanslanmıştır.
