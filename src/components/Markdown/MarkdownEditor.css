@@ -1,0 +1,212 @@
+/* Markdown Editor Styles */
+
+.markdown-editor {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.markdown-tabs {
+    display: flex;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 8px;
+}
+
+.markdown-tab {
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.markdown-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+.markdown-tab.active {
+    color: var(--primary-500);
+    border-bottom-color: var(--primary-500);
+}
+
+.markdown-content {
+    background: var(--bg-card);
+    min-height: 150px;
+    position: relative;
+}
+
+.markdown-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    border: none;
+    resize: vertical;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.markdown-textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Preview Styles */
+.markdown-preview {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    overflow-wrap: break-word;
+}
+
+.markdown-preview.read-only {
+    background: transparent;
+    padding: 0;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.markdown-preview h1 {
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3em;
+}
+
+.markdown-preview h2 {
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3em;
+}
+
+.markdown-preview h3 {
+    font-size: 1.1em;
+}
+
+.markdown-preview p {
+    margin-bottom: 1em;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+.markdown-preview li {
+    margin-bottom: 0.25em;
+}
+
+.markdown-preview blockquote {
+    margin: 0 0 1em;
+    padding: 0 1em;
+    color: var(--text-secondary);
+    border-left: 0.25em solid var(--border-color);
+}
+
+.markdown-preview code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: var(--bg-tertiary);
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.markdown-preview pre {
+    padding: 12px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: var(--bg-tertiary);
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.markdown-preview pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 100%;
+}
+
+.markdown-preview a {
+    color: var(--primary-500);
+    text-decoration: none;
+}
+
+.markdown-preview a:hover {
+    text-decoration: underline;
+}
+
+.markdown-preview img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.markdown-preview table {
+    width: 100%;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+.markdown-preview th,
+.markdown-preview td {
+    padding: 6px 13px;
+    border: 1px solid var(--border-color);
+}
+
+.markdown-preview th {
+    background-color: var(--bg-tertiary);
+    font-weight: 600;
+}
+
+.markdown-preview tr:hover {
+    background-color: var(--bg-hover);
+}
+
+.markdown-preview input[type="checkbox"] {
+    margin-right: 0.5em;
+    accent-color: var(--primary-500);
+}
+
+/* Footer */
+.markdown-footer {
+    padding: 6px 12px;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.markdown-help-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.markdown-help-link:hover {
+    color: var(--primary-500);
+}

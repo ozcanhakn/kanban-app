@@ -1,0 +1,105 @@
+/* PriorityPicker Component Styles */
+
+.priority-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.priority-picker-header h4 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Priority Options */
+.priority-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.priority-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--bg-hover);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.priority-option:hover {
+    background: var(--bg-secondary);
+    border-color: var(--priority-color);
+}
+
+.priority-option.selected {
+    background: color-mix(in srgb, var(--priority-color) 15%, transparent);
+    border-color: var(--priority-color);
+}
+
+.priority-icon {
+    font-size: 14px;
+}
+
+.priority-label {
+    font-weight: 500;
+}
+
+/* Compact Select */
+.priority-picker-compact {
+    display: inline-flex;
+}
+
+.priority-select {
+    padding: 6px 10px;
+    background: var(--bg-input);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.priority-select:focus {
+    border-color: var(--primary-500);
+}
+
+/* Priority Badge */
+.priority-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.priority-badge.small {
+    padding: 2px 6px;
+}
+
+.priority-badge.small .priority-badge-icon {
+    font-size: 10px;
+}
+
+.priority-badge-icon {
+    font-size: 11px;
+}
+
+.priority-badge-text {
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}

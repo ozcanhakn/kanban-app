@@ -1,0 +1,149 @@
+/* Onboarding Page Styles */
+
+.onboarding-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: var(--bg-primary);
+}
+
+.onboarding-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 48px 40px;
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Dots */
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: var(--primary-500);
+    transform: scale(1.2);
+}
+
+/* Step Content */
+.onboarding-step {
+    text-align: center;
+}
+
+.step-icon {
+    font-size: 72px;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.onboarding-step h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.onboarding-step p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+/* Choice Buttons */
+.choice-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.choice-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.choice-btn:hover {
+    border-color: var(--primary-500);
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+}
+
+.choice-icon {
+    font-size: 32px;
+}
+
+.choice-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.choice-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Form in Onboarding */
+.onboarding-step .form-group {
+    margin-bottom: 24px;
+}
+
+.onboarding-step .form-group input {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    text-align: center;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.onboarding-step .form-group input:focus {
+    border-color: var(--primary-500);
+}
+
+.onboarding-step .form-group input::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Buttons */
+.onboarding-step .btn-primary {
+    padding: 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.onboarding-step .btn-ghost {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Error in Onboarding */
+.onboarding-step .auth-error {
+    margin-bottom: 20px;
+}

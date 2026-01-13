@@ -1,0 +1,93 @@
+/* Activity Log Styles */
+
+.activity-log {
+    margin-top: 10px;
+}
+
+.empty-activity {
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 13px;
+    padding: 20px;
+}
+
+.activity-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.activity-item:last-child {
+    padding-bottom: 0;
+}
+
+.activity-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+}
+
+.activity-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-tertiary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 1;
+    border: 2px solid var(--bg-card);
+}
+
+.activity-line {
+    width: 2px;
+    background: var(--border-color);
+    flex: 1;
+    margin-top: 4px;
+}
+
+.activity-item:last-child .activity-line {
+    display: none;
+}
+
+.activity-content {
+    flex: 1;
+    padding-top: 2px;
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-primary);
+    flex-wrap: wrap;
+}
+
+.activity-user {
+    font-weight: 600;
+}
+
+.activity-text {
+    color: var(--text-secondary);
+}
+
+.activity-text strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.activity-date {
+    display: block;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+}

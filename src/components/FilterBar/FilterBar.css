@@ -1,0 +1,220 @@
+/* FilterBar Component Styles */
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+}
+
+/* Search */
+.filter-search {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.filter-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.filter-search-input {
+    width: 100%;
+    padding: 10px 36px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.filter-search-input:focus {
+    border-color: var(--primary-500);
+}
+
+.filter-search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.filter-clear-search {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-clear-search:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+/* Toggle Button */
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-toggle:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-500);
+    color: var(--text-primary);
+}
+
+.filter-toggle.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-500);
+    color: var(--primary-500);
+}
+
+.filter-toggle.has-filters {
+    color: var(--primary-500);
+}
+
+.filter-count {
+    padding: 2px 6px;
+    background: var(--primary-500);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Clear Button */
+.filter-clear-btn {
+    padding: 10px 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.filter-clear-btn:hover {
+    color: #ef4444;
+}
+
+/* Filter Panel */
+.filter-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 8px;
+}
+
+.filter-section h5 {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Filter Chips */
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filter-chip {
+    padding: 6px 12px;
+    background: var(--bg-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-chip:hover {
+    border-color: var(--chip-color, var(--primary-500));
+    background: color-mix(in srgb, var(--chip-color, var(--primary-500)) 10%, transparent);
+}
+
+.filter-chip.active {
+    background: color-mix(in srgb, var(--chip-color, var(--primary-500)) 20%, transparent);
+    border-color: var(--chip-color, var(--primary-500));
+    color: var(--chip-color, var(--primary-500));
+}
+
+.filter-empty {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Advanced Panel Animation */
+.filter-panel {
+    animation: slideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium Filter Chips */
+.filter-chip {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-chip.active {
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
