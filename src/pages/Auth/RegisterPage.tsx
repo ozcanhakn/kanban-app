@@ -3,12 +3,12 @@
  */
 
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './AuthPages.css';
 
 export function RegisterPage() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate(); // Removed unused variable
     const { signUp } = useAuth();
 
     const [fullName, setFullName] = useState('');
